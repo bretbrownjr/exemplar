@@ -5,6 +5,10 @@ SPDX-License-Identifier: CC0-1.0
 
 # example
 
+## Health
+
+![CI Status](https://github.com/beman-org/example/actions/workflows/cxx.yml/badge.svg)
+
 ## About
 
 `example` is an example Beman library.
