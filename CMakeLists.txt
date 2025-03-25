@@ -2,6 +2,11 @@
 
 cmake_minimum_required(VERSION 3.25)
 
+set(
+    CMAKE_EXPERIMENTAL_EXPORT_PACKAGE_INFO
+    "b80be207-778e-46ba-8080-b23bba22639e"
+)
+
 project(
     beman.exemplar # CMake Project Name, which is also the name of the top-level
     # targets (e.g., library, executable, etc.).
@@ -28,6 +33,17 @@ option(
     BEMAN_EXEMPLAR_INSTALL_CONFIG_FILE_PACKAGE
     "Enable creating and installing a CMake config-file package. Default: ${PROJECT_IS_TOP_LEVEL}. Values: { ON, OFF }."
     ${PROJECT_IS_TOP_LEVEL}
+)
+
+set(BEMAN_EXEMPLAR_INSTALL_CPS_DEFAULT OFF)
+if (CMAKE_VERSION VERSION_GREATER 4.0)
+    set(BEMAN_EXEMPLAR_INSTALL_CPS_DEFAULT ON)
+endif ()
+
+option(
+    BEMAN_EXEMPLAR_INSTALL_CPS
+    "Enable creating and installing CPS package metadata. Default: ${PROJECT_IS_TOP_LEVEL}. Values: { ON, OFF }."
+    ${BEMAN_EXEMPLAR_INSTALL_CPS_DEFAULT}
 )
 
 include(CTest)
