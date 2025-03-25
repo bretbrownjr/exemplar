@@ -58,4 +58,12 @@ if(BEMAN_EXEMPLAR_INSTALL_CONFIG_FILE_PACKAGE)
         FILE ${PROJECT_NAME}-targets.cmake
         COMPONENT development
     )
+
+    if(BEMAN_EXEMPLAR_INSTALL_CPS)
+        install(
+            PACKAGE_INFO beman.exemplar
+	    EXPORT beman.exemplar
+            VERSION ${PROJECT_VERSION}
+        )
+    endif()
 endif()
